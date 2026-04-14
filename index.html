@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pipeline AI - Turn Social Media Into Revenue</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --black: #0a0a0a;
+      --white: #ffffff;
+      --gray-100: #f5f5f5;
+      --gray-400: #9ca3af;
+      --gray-600: #4b5563;
+      --accent: #2563eb;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--white);
+      color: var(--black);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .btn {
+      display: inline-block;
+      background: var(--black);
+      color: var(--white);
+      padding: 16px 32px;
+      font-size: 16px;
+      font-weight: 600;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: all 0.2s ease;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      background: #1a1a1a;
+      transform: translateY(-2px);
+    }
+
+    section {
+      padding: 80px 0;
+    }
+
+    @media (min-width: 768px) {
+      section {
+        padding: 120px 0;
+      }
+    }
+
+    /* Hero */
+    .hero {
+      padding-top: 60px;
+      padding-bottom: 80px;
+    }
+
+    @media (min-width: 768px) {
+      .hero {
+        padding-top: 100px;
+        padding-bottom: 120px;
+      }
+    }
+
+    .hero h1 {
+      font-size: clamp(32px, 6vw, 56px);
+      font-weight: 800;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      margin-bottom: 24px;
+    }
+
+    .hero .subheadline {
+      font-size: 18px;
+      color: var(--gray-600);
+      margin-bottom: 40px;
+      max-width: 540px;
+    }
+
+    .hero .subheadline strong {
+      color: var(--black);
+      font-weight: 600;
+    }
+
+    .trust-line {
+      margin-top: 24px;
+      font-size: 14px;
+      color: var(--gray-400);
+    }
+
+    /* Problem */
+    .problem {
+      background: var(--gray-100);
+    }
+
+    .problem h2 {
+      font-size: clamp(24px, 4vw, 32px);
+      font-weight: 700;
+      margin-bottom: 32px;
+      line-height: 1.2;
+    }
+
+    .problem ul {
+      list-style: none;
+      margin-bottom: 32px;
+    }
+
+    .problem li {
+      padding: 8px 0;
+      padding-left: 24px;
+      position: relative;
+      color: var(--gray-600);
+    }
+
+    .problem li::before {
+      content: "→";
+      position: absolute;
+      left: 0;
+      color: var(--gray-400);
+    }
+
+    .problem .result {
+      margin-top: 40px;
+      padding-top: 32px;
+      border-top: 1px solid #e5e5e5;
+    }
+
+    .problem .result p {
+      color: var(--gray-600);
+      margin-bottom: 16px;
+    }
+
+    .problem .result ul li {
+      color: var(--black);
+      font-weight: 500;
+    }
+
+    /* Shift */
+    .shift h2 {
+      font-size: clamp(24px, 4vw, 36px);
+      font-weight: 700;
+      margin-bottom: 24px;
+      line-height: 1.2;
+    }
+
+    .shift .highlight {
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 32px;
+    }
+
+    .shift p {
+      color: var(--gray-600);
+      margin-bottom: 16px;
+    }
+
+    .shift .because {
+      margin-top: 32px;
+    }
+
+    .shift .because li {
+      padding: 8px 0;
+      color: var(--gray-600);
+    }
+
+    .shift .capture {
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--black);
+      margin-top: 32px;
+    }
+
+    /* How It Works */
+    .how-it-works {
+      background: var(--black);
+      color: var(--white);
+    }
+
+    .how-it-works h2 {
+      font-size: clamp(24px, 4vw, 36px);
+      font-weight: 700;
+      margin-bottom: 48px;
+    }
+
+    .steps {
+      display: grid;
+      gap: 40px;
+    }
+
+    .step {
+      display: flex;
+      gap: 20px;
+    }
+
+    .step-number {
+      flex-shrink: 0;
+      width: 40px;
+      height: 40px;
+      background: var(--white);
+      color: var(--black);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 16px;
+    }
+
+    .step-content h3 {
+      font-size: 18px;
+      font-weight: 600;
+      line-height: 1.4;
+    }
+
+    .how-it-works .bottom-line {
+      margin-top: 48px;
+      padding-top: 32px;
+      border-top: 1px solid #333;
+      font-size: 18px;
+      font-weight: 600;
+    }
+
+    .how-it-works .btn {
+      background: var(--white);
+      color: var(--black);
+      margin-top: 40px;
+    }
+
+    .how-it-works .btn:hover {
+      background: var(--gray-100);
+    }
+
+    /* What You Get */
+    .what-you-get h2 {
+      font-size: clamp(24px, 4vw, 36px);
+      font-weight: 700;
+      margin-bottom: 40px;
+    }
+
+    .what-you-get ul {
+      list-style: none;
+    }
+
+    .what-you-get li {
+      padding: 16px 0;
+      border-bottom: 1px solid var(--gray-100);
+      font-size: 17px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .what-you-get li::before {
+      content: "✓";
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    .what-you-get .tagline {
+      margin-top: 40px;
+      font-size: 18px;
+      font-weight: 600;
+    }
+
+    /* Who This Is For */
+    .who-for {
+      background: var(--gray-100);
+    }
+
+    .who-for h2 {
+      font-size: clamp(24px, 4vw, 36px);
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+
+    .who-for .subtitle {
+      color: var(--gray-600);
+      margin-bottom: 32px;
+    }
+
+    .who-for ul {
+      list-style: none;
+      display: grid;
+      gap: 12px;
+    }
+
+    .who-for li {
+      background: var(--white);
+      padding: 16px 20px;
+      border-radius: 8px;
+      font-weight: 500;
+    }
+
+    .who-for .fit-line {
+      margin-top: 40px;
+      font-size: 17px;
+      color: var(--gray-600);
+    }
+
+    .who-for .fit-line strong {
+      color: var(--black);
+    }
+
+    /* Pilot */
+    .pilot h2 {
+      font-size: clamp(24px, 4vw, 36px);
+      font-weight: 700;
+      margin-bottom: 24px;
+    }
+
+    .pilot .intro {
+      font-size: 18px;
+      color: var(--gray-600);
+      margin-bottom: 32px;
+    }
+
+    .pilot ul {
+      list-style: none;
+      margin-bottom: 32px;
+    }
+
+    .pilot li {
+      padding: 12px 0;
+      padding-left: 28px;
+      position: relative;
+    }
+
+    .pilot li::before {
+      content: "•";
+      position: absolute;
+      left: 8px;
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    .pilot .terms {
+      color: var(--gray-600);
+      font-size: 15px;
+    }
+
+    .pilot .terms p {
+      margin-bottom: 8px;
+    }
+
+    /* Final CTA */
+    .final-cta {
+      background: var(--black);
+      color: var(--white);
+      text-align: center;
+    }
+
+    .final-cta h2 {
+      font-size: clamp(28px, 5vw, 44px);
+      font-weight: 800;
+      margin-bottom: 32px;
+      line-height: 1.1;
+    }
+
+    .final-cta .btn {
+      background: var(--white);
+      color: var(--black);
+      font-size: 18px;
+      padding: 20px 48px;
+    }
+
+    .final-cta .btn:hover {
+      background: var(--gray-100);
+    }
+
+    .final-cta .subtext {
+      margin-top: 24px;
+      color: var(--gray-400);
+      font-size: 14px;
+    }
+
+    /* Footer */
+    footer {
+      padding: 40px 0;
+      text-align: center;
+      font-size: 14px;
+      color: var(--gray-400);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <h1>We Turn Social Media Into Inbound Conversations That Convert Into Revenue</h1>
+      <p class="subheadline">
+        Most businesses are posting…<br>
+        Few are actually generating real conversations with buyers.<br><br>
+        <strong>We fix that.</strong>
+      </p>
+      <a href="#book" class="btn">Book a Call</a>
+      <p class="trust-line">Used by businesses generating real pipeline—not just posting content.</p>
+    </div>
+  </section>
+
+  <!-- The Problem -->
+  <section class="problem">
+    <div class="container">
+      <h2>Most companies think social media = content.</h2>
+      <p style="color: var(--gray-600); margin-bottom: 24px;">So they:</p>
+      <ul>
+        <li>post consistently</li>
+        <li>get some likes</li>
+        <li>maybe a few comments</li>
+      </ul>
+      <div class="result">
+        <p>But nothing actually turns into:</p>
+        <ul>
+          <li>real opportunities</li>
+          <li>real conversations</li>
+          <li>real revenue</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- The Shift -->
+  <section class="shift">
+    <div class="container">
+      <h2>At Pipeline AI, we don't focus on content…</h2>
+      <p class="highlight">We focus on conversations.</p>
+      <div class="because">
+        <p>Because:</p>
+        <ul style="list-style: none;">
+          <li>→ Buyers don't fill out forms first</li>
+          <li>→ They think, hesitate, and talk</li>
+        </ul>
+      </div>
+      <p class="capture">We capture that moment.</p>
+    </div>
+  </section>
+
+  <!-- How It Works -->
+  <section class="how-it-works">
+    <div class="container">
+      <h2>How It Works</h2>
+      <div class="steps">
+        <div class="step">
+          <div class="step-number">1</div>
+          <div class="step-content">
+            <h3>We create content that triggers real engagement</h3>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-number">2</div>
+          <div class="step-content">
+            <h3>We turn engagement into direct conversations</h3>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-number">3</div>
+          <div class="step-content">
+            <h3>We guide those conversations into your pipeline</h3>
+          </div>
+        </div>
+      </div>
+      <p class="bottom-line">That's where deals actually start.</p>
+      <a href="#book" class="btn">Book a Call</a>
+    </div>
+  </section>
+
+  <!-- What You Get -->
+  <section class="what-you-get">
+    <div class="container">
+      <h2>What You Get</h2>
+      <ul>
+        <li>Daily high-converting content</li>
+        <li>Comment + DM strategy</li>
+        <li>Conversation scripts</li>
+        <li>Lead qualification flow</li>
+        <li>Ongoing optimization</li>
+      </ul>
+      <p class="tagline">No fluff. Just pipeline.</p>
+    </div>
+  </section>
+
+  <!-- Who This Is For -->
+  <section class="who-for">
+    <div class="container">
+      <h2>Who This Is For</h2>
+      <p class="subtitle">Best fit for:</p>
+      <ul>
+        <li>Mortgage companies</li>
+        <li>Loan officers</li>
+        <li>Real estate professionals</li>
+        <li>Roofing companies</li>
+        <li>Home service businesses</li>
+      </ul>
+      <p class="fit-line">If your business depends on conversations, <strong>this works.</strong></p>
+    </div>
+  </section>
+
+  <!-- Pilot Offer -->
+  <section class="pilot">
+    <div class="container">
+      <h2>90-Day Pilot</h2>
+      <p class="intro">We run this as a simple 90-day pilot:</p>
+      <ul>
+        <li>Generate inbound conversations</li>
+        <li>Track opportunities</li>
+        <li>Optimize based on results</li>
+      </ul>
+      <div class="terms">
+        <p>If it works, we scale.</p>
+        <p>If not, no long-term commitment.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="final-cta" id="book">
+    <div class="container">
+      <h2>Let's Turn Your Social Into a Revenue Channel</h2>
+      <a href="#book" class="btn">Book a Call</a>
+      <p class="subtext">Quick 10–15 minute call to see if this fits your business.</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2024 Pipeline AI. All rights reserved.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
