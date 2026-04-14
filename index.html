@@ -3,7 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pipeline AI - Turn Social Media Into Revenue</title>
+  <title>Pipeline AI - Turn Social Media Into Sales Conversations</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="images/favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -15,33 +17,35 @@
     }
 
     :root {
-      --black: #0a0a0a;
+      --navy: #0B1F3A;
+      --blue: #2563EB;
+      --green: #22C55E;
       --white: #ffffff;
-      --gray-100: #f5f5f5;
+      --gray-50: #f9fafb;
+      --gray-100: #f3f4f6;
       --gray-400: #9ca3af;
       --gray-600: #4b5563;
-      --accent: #2563eb;
     }
 
     body {
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
       background: var(--white);
-      color: var(--black);
+      color: var(--navy);
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
     }
 
     .container {
-      max-width: 720px;
+      max-width: 1100px;
       margin: 0 auto;
       padding: 0 24px;
     }
 
     .btn {
       display: inline-block;
-      background: var(--black);
+      background: var(--blue);
       color: var(--white);
-      padding: 16px 32px;
+      padding: 18px 36px;
       font-size: 16px;
       font-weight: 600;
       text-decoration: none;
@@ -52,8 +56,19 @@
     }
 
     .btn:hover {
-      background: #1a1a1a;
+      background: #1d4ed8;
       transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      background: transparent;
+      border: 2px solid var(--white);
+      color: var(--white);
+    }
+
+    .btn-outline:hover {
+      background: var(--white);
+      color: var(--navy);
     }
 
     section {
@@ -66,418 +81,674 @@
       }
     }
 
+    /* Header */
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      padding: 16px 0;
+      background: rgba(11, 31, 58, 0.95);
+      backdrop-filter: blur(10px);
+    }
+
+    .header .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      height: 36px;
+    }
+
+    .header .btn {
+      padding: 12px 24px;
+      font-size: 14px;
+    }
+
     /* Hero */
     .hero {
-      padding-top: 60px;
-      padding-bottom: 80px;
+      background: linear-gradient(135deg, var(--navy) 0%, #132d4e 50%, #0d2847 100%);
+      color: var(--white);
+      padding-top: 140px;
+      padding-bottom: 100px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(circle at 70% 30%, rgba(37, 99, 235, 0.15) 0%, transparent 50%),
+                  radial-gradient(circle at 30% 70%, rgba(34, 197, 94, 0.1) 0%, transparent 50%);
+      pointer-events: none;
     }
 
     @media (min-width: 768px) {
       .hero {
-        padding-top: 100px;
-        padding-bottom: 120px;
+        padding-top: 180px;
+        padding-bottom: 140px;
       }
     }
 
+    .hero .container {
+      position: relative;
+      z-index: 1;
+    }
+
     .hero h1 {
-      font-size: clamp(32px, 6vw, 56px);
+      font-size: clamp(36px, 7vw, 64px);
       font-weight: 800;
       line-height: 1.1;
       letter-spacing: -0.02em;
       margin-bottom: 24px;
+      max-width: 800px;
+    }
+
+    .hero h1 span {
+      color: var(--green);
     }
 
     .hero .subheadline {
-      font-size: 18px;
-      color: var(--gray-600);
+      font-size: clamp(18px, 2.5vw, 22px);
+      color: rgba(255, 255, 255, 0.8);
       margin-bottom: 40px;
-      max-width: 540px;
-    }
-
-    .hero .subheadline strong {
-      color: var(--black);
-      font-weight: 600;
-    }
-
-    .trust-line {
-      margin-top: 24px;
-      font-size: 14px;
-      color: var(--gray-400);
+      max-width: 600px;
     }
 
     /* Problem */
     .problem {
-      background: var(--gray-100);
+      background: var(--gray-50);
     }
 
     .problem h2 {
-      font-size: clamp(24px, 4vw, 32px);
-      font-weight: 700;
-      margin-bottom: 32px;
-      line-height: 1.2;
-    }
-
-    .problem ul {
-      list-style: none;
-      margin-bottom: 32px;
-    }
-
-    .problem li {
-      padding: 8px 0;
-      padding-left: 24px;
-      position: relative;
-      color: var(--gray-600);
-    }
-
-    .problem li::before {
-      content: "→";
-      position: absolute;
-      left: 0;
-      color: var(--gray-400);
-    }
-
-    .problem .result {
-      margin-top: 40px;
-      padding-top: 32px;
-      border-top: 1px solid #e5e5e5;
-    }
-
-    .problem .result p {
-      color: var(--gray-600);
-      margin-bottom: 16px;
-    }
-
-    .problem .result ul li {
-      color: var(--black);
-      font-weight: 500;
-    }
-
-    /* Shift */
-    .shift h2 {
-      font-size: clamp(24px, 4vw, 36px);
+      font-size: clamp(28px, 4vw, 40px);
       font-weight: 700;
       margin-bottom: 24px;
       line-height: 1.2;
     }
 
-    .shift .highlight {
-      font-size: 20px;
-      font-weight: 600;
-      margin-bottom: 32px;
+    .problem p {
+      font-size: 18px;
+      color: var(--gray-600);
+      max-width: 600px;
     }
 
-    .shift p {
+    .problem .stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 32px;
+      margin-top: 48px;
+    }
+
+    .stat {
+      text-align: center;
+      padding: 32px;
+      background: var(--white);
+      border-radius: 12px;
+    }
+
+    .stat-number {
+      font-size: 48px;
+      font-weight: 800;
+      color: var(--blue);
+      line-height: 1;
+    }
+
+    .stat-label {
+      margin-top: 8px;
       color: var(--gray-600);
+      font-size: 14px;
+    }
+
+    /* Shift */
+    .shift {
+      text-align: center;
+    }
+
+    .shift h2 {
+      font-size: clamp(28px, 4vw, 44px);
+      font-weight: 700;
       margin-bottom: 16px;
     }
 
-    .shift .because {
-      margin-top: 32px;
+    .shift .highlight {
+      color: var(--blue);
     }
 
-    .shift .because li {
-      padding: 8px 0;
-      color: var(--gray-600);
-    }
-
-    .shift .capture {
+    .shift p {
       font-size: 18px;
-      font-weight: 600;
-      color: var(--black);
-      margin-top: 32px;
+      color: var(--gray-600);
+      max-width: 500px;
+      margin: 0 auto;
     }
 
-    /* How It Works */
-    .how-it-works {
-      background: var(--black);
+    /* Flow Diagram */
+    .flow {
+      background: var(--navy);
       color: var(--white);
+      overflow-x: auto;
     }
 
-    .how-it-works h2 {
+    .flow h2 {
       font-size: clamp(24px, 4vw, 36px);
       font-weight: 700;
       margin-bottom: 48px;
+      text-align: center;
     }
 
-    .steps {
-      display: grid;
-      gap: 40px;
-    }
-
-    .step {
+    .flow-diagram {
       display: flex;
-      gap: 20px;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      padding: 20px 0;
     }
 
-    .step-number {
-      flex-shrink: 0;
+    @media (min-width: 768px) {
+      .flow-diagram {
+        flex-wrap: nowrap;
+        gap: 16px;
+      }
+    }
+
+    .flow-step {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+      padding: 24px 20px;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 12px;
+      min-width: 100px;
+      flex: 1;
+      max-width: 140px;
+    }
+
+    .flow-icon {
+      width: 48px;
+      height: 48px;
+      background: var(--blue);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .flow-icon svg {
+      width: 24px;
+      height: 24px;
+      stroke: white;
+      fill: none;
+      stroke-width: 2;
+    }
+
+    .flow-step span {
+      font-weight: 600;
+      font-size: 14px;
+      text-align: center;
+    }
+
+    .flow-arrow {
+      color: var(--green);
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    @media (max-width: 767px) {
+      .flow-arrow {
+        display: none;
+      }
+    }
+
+    .flow-step.deal {
+      background: rgba(34, 197, 94, 0.2);
+      border: 2px solid var(--green);
+    }
+
+    .flow-step.deal .flow-icon {
+      background: var(--green);
+    }
+
+    /* Conversation Mockup */
+    .conversation-section {
+      background: var(--gray-50);
+    }
+
+    .conversation-section h2 {
+      font-size: clamp(24px, 4vw, 36px);
+      font-weight: 700;
+      margin-bottom: 16px;
+      text-align: center;
+    }
+
+    .conversation-section > .container > p {
+      text-align: center;
+      color: var(--gray-600);
+      margin-bottom: 48px;
+    }
+
+    .conversation-mockup {
+      max-width: 400px;
+      margin: 0 auto;
+      background: var(--white);
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+    }
+
+    .conversation-header {
+      background: var(--navy);
+      color: var(--white);
+      padding: 16px 20px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .conversation-avatar {
       width: 40px;
       height: 40px;
-      background: var(--white);
-      color: var(--black);
+      background: var(--blue);
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
       font-weight: 700;
-      font-size: 16px;
+      font-size: 14px;
     }
 
-    .step-content h3 {
-      font-size: 18px;
+    .conversation-name {
       font-weight: 600;
+    }
+
+    .conversation-status {
+      font-size: 12px;
+      color: var(--green);
+    }
+
+    .conversation-messages {
+      padding: 24px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .message {
+      max-width: 85%;
+      padding: 14px 18px;
+      border-radius: 18px;
+      font-size: 15px;
       line-height: 1.4;
     }
 
-    .how-it-works .bottom-line {
-      margin-top: 48px;
-      padding-top: 32px;
-      border-top: 1px solid #333;
-      font-size: 18px;
-      font-weight: 600;
-    }
-
-    .how-it-works .btn {
-      background: var(--white);
-      color: var(--black);
-      margin-top: 40px;
-    }
-
-    .how-it-works .btn:hover {
+    .message.incoming {
       background: var(--gray-100);
+      align-self: flex-start;
+      border-bottom-left-radius: 4px;
+    }
+
+    .message.outgoing {
+      background: var(--blue);
+      color: var(--white);
+      align-self: flex-end;
+      border-bottom-right-radius: 4px;
+    }
+
+    .message-time {
+      font-size: 11px;
+      color: var(--gray-400);
+      margin-top: 4px;
+    }
+
+    .message.outgoing .message-time {
+      color: rgba(255, 255, 255, 0.7);
     }
 
     /* What You Get */
     .what-you-get h2 {
-      font-size: clamp(24px, 4vw, 36px);
+      font-size: clamp(28px, 4vw, 40px);
       font-weight: 700;
-      margin-bottom: 40px;
+      margin-bottom: 48px;
+      text-align: center;
     }
 
-    .what-you-get ul {
-      list-style: none;
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
     }
 
-    .what-you-get li {
-      padding: 16px 0;
-      border-bottom: 1px solid var(--gray-100);
-      font-size: 17px;
+    .feature-card {
+      padding: 32px;
+      background: var(--gray-50);
+      border-radius: 16px;
+      transition: all 0.2s ease;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+    }
+
+    .feature-icon {
+      width: 48px;
+      height: 48px;
+      background: var(--navy);
+      border-radius: 12px;
       display: flex;
       align-items: center;
-      gap: 16px;
-    }
-
-    .what-you-get li::before {
-      content: "✓";
-      color: var(--accent);
-      font-weight: 700;
-    }
-
-    .what-you-get .tagline {
-      margin-top: 40px;
-      font-size: 18px;
-      font-weight: 600;
-    }
-
-    /* Who This Is For */
-    .who-for {
-      background: var(--gray-100);
-    }
-
-    .who-for h2 {
-      font-size: clamp(24px, 4vw, 36px);
-      font-weight: 700;
+      justify-content: center;
       margin-bottom: 16px;
     }
 
-    .who-for .subtitle {
-      color: var(--gray-600);
-      margin-bottom: 32px;
+    .feature-icon svg {
+      width: 24px;
+      height: 24px;
+      stroke: var(--white);
+      fill: none;
+      stroke-width: 2;
     }
 
-    .who-for ul {
-      list-style: none;
-      display: grid;
-      gap: 12px;
-    }
-
-    .who-for li {
-      background: var(--white);
-      padding: 16px 20px;
-      border-radius: 8px;
-      font-weight: 500;
-    }
-
-    .who-for .fit-line {
-      margin-top: 40px;
-      font-size: 17px;
-      color: var(--gray-600);
-    }
-
-    .who-for .fit-line strong {
-      color: var(--black);
-    }
-
-    /* Pilot */
-    .pilot h2 {
-      font-size: clamp(24px, 4vw, 36px);
-      font-weight: 700;
-      margin-bottom: 24px;
-    }
-
-    .pilot .intro {
+    .feature-card h3 {
       font-size: 18px;
-      color: var(--gray-600);
-      margin-bottom: 32px;
+      font-weight: 600;
+      margin-bottom: 8px;
     }
 
-    .pilot ul {
-      list-style: none;
-      margin-bottom: 32px;
-    }
-
-    .pilot li {
-      padding: 12px 0;
-      padding-left: 28px;
-      position: relative;
-    }
-
-    .pilot li::before {
-      content: "•";
-      position: absolute;
-      left: 8px;
-      color: var(--accent);
-      font-weight: 700;
-    }
-
-    .pilot .terms {
+    .feature-card p {
       color: var(--gray-600);
       font-size: 15px;
     }
 
-    .pilot .terms p {
-      margin-bottom: 8px;
+    /* Who This Is For */
+    .who-for {
+      background: var(--gray-50);
+    }
+
+    .who-for h2 {
+      font-size: clamp(28px, 4vw, 40px);
+      font-weight: 700;
+      margin-bottom: 16px;
+      text-align: center;
+    }
+
+    .who-for > .container > p {
+      text-align: center;
+      color: var(--gray-600);
+      margin-bottom: 48px;
+      font-size: 18px;
+    }
+
+    .industries {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 16px;
+    }
+
+    .industry-tag {
+      padding: 14px 24px;
+      background: var(--white);
+      border-radius: 100px;
+      font-weight: 500;
+      font-size: 15px;
+      border: 1px solid var(--gray-100);
+    }
+
+    /* Pilot */
+    .pilot {
+      text-align: center;
+    }
+
+    .pilot h2 {
+      font-size: clamp(28px, 4vw, 40px);
+      font-weight: 700;
+      margin-bottom: 24px;
+    }
+
+    .pilot-steps {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-top: 48px;
+    }
+
+    .pilot-step {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 16px 24px;
+      background: var(--gray-50);
+      border-radius: 100px;
+      font-weight: 500;
+    }
+
+    .pilot-step-number {
+      width: 28px;
+      height: 28px;
+      background: var(--navy);
+      color: var(--white);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .pilot-arrow {
+      color: var(--blue);
+      font-size: 20px;
+    }
+
+    @media (max-width: 767px) {
+      .pilot-arrow {
+        display: none;
+      }
+    }
+
+    .pilot .subtext {
+      margin-top: 32px;
+      color: var(--gray-600);
     }
 
     /* Final CTA */
     .final-cta {
-      background: var(--black);
+      background: var(--navy);
       color: var(--white);
       text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .final-cta::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(circle at 50% 50%, rgba(37, 99, 235, 0.2) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    .final-cta .container {
+      position: relative;
+      z-index: 1;
     }
 
     .final-cta h2 {
-      font-size: clamp(28px, 5vw, 44px);
+      font-size: clamp(32px, 5vw, 52px);
       font-weight: 800;
-      margin-bottom: 32px;
+      margin-bottom: 24px;
       line-height: 1.1;
     }
 
+    .final-cta p {
+      color: rgba(255, 255, 255, 0.7);
+      margin-bottom: 40px;
+      font-size: 18px;
+    }
+
     .final-cta .btn {
-      background: var(--white);
-      color: var(--black);
+      background: var(--green);
       font-size: 18px;
       padding: 20px 48px;
     }
 
     .final-cta .btn:hover {
-      background: var(--gray-100);
-    }
-
-    .final-cta .subtext {
-      margin-top: 24px;
-      color: var(--gray-400);
-      font-size: 14px;
+      background: #16a34a;
     }
 
     /* Footer */
     footer {
-      padding: 40px 0;
+      background: var(--navy);
+      padding: 32px 0;
       text-align: center;
       font-size: 14px;
-      color: var(--gray-400);
+      color: rgba(255, 255, 255, 0.5);
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
     }
   </style>
 </head>
 <body>
 
+  <!-- Header -->
+  <header class="header">
+    <div class="container">
+      <img src="images/logo.png" alt="Pipeline AI" class="logo">
+      <a href="#book" class="btn">See How This Works</a>
+    </div>
+  </header>
+
   <!-- Hero -->
   <section class="hero">
     <div class="container">
-      <h1>We Turn Social Media Into Inbound Conversations That Convert Into Revenue</h1>
-      <p class="subheadline">
-        Most businesses are posting…<br>
-        Few are actually generating real conversations with buyers.<br><br>
-        <strong>We fix that.</strong>
-      </p>
-      <a href="#book" class="btn">Book a Call</a>
-      <p class="trust-line">Used by businesses generating real pipeline—not just posting content.</p>
+      <h1>Turn Social Media Into <span>5–15 Real Sales Conversations</span> Per Week</h1>
+      <p class="subheadline">We convert your posts into real buyer conversations—no ads, no funnels.</p>
+      <a href="#book" class="btn">See How This Works</a>
     </div>
   </section>
 
-  <!-- The Problem -->
+  <!-- Problem -->
   <section class="problem">
     <div class="container">
-      <h2>Most companies think social media = content.</h2>
-      <p style="color: var(--gray-600); margin-bottom: 24px;">So they:</p>
-      <ul>
-        <li>post consistently</li>
-        <li>get some likes</li>
-        <li>maybe a few comments</li>
-      </ul>
-      <div class="result">
-        <p>But nothing actually turns into:</p>
-        <ul>
-          <li>real opportunities</li>
-          <li>real conversations</li>
-          <li>real revenue</li>
-        </ul>
+      <h2>The Problem</h2>
+      <p>Most businesses post daily and generate zero real opportunities. Likes don't pay the bills. Comments don't close deals.</p>
+      <div class="stats">
+        <div class="stat">
+          <div class="stat-number">95%</div>
+          <div class="stat-label">of social posts generate zero pipeline</div>
+        </div>
+        <div class="stat">
+          <div class="stat-number">0</div>
+          <div class="stat-label">conversations from "engagement"</div>
+        </div>
+        <div class="stat">
+          <div class="stat-number">$0</div>
+          <div class="stat-label">revenue from vanity metrics</div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- The Shift -->
+  <!-- Shift -->
   <section class="shift">
     <div class="container">
-      <h2>At Pipeline AI, we don't focus on content…</h2>
-      <p class="highlight">We focus on conversations.</p>
-      <div class="because">
-        <p>Because:</p>
-        <ul style="list-style: none;">
-          <li>→ Buyers don't fill out forms first</li>
-          <li>→ They think, hesitate, and talk</li>
-        </ul>
-      </div>
-      <p class="capture">We capture that moment.</p>
+      <h2>We don't create content.<br><span class="highlight">We create conversations.</span></h2>
+      <p>Content is noise. Conversations are revenue. We turn every post into an opportunity to start a real sales conversation.</p>
     </div>
   </section>
 
-  <!-- How It Works -->
-  <section class="how-it-works">
+  <!-- Flow Diagram -->
+  <section class="flow">
     <div class="container">
-      <h2>How It Works</h2>
-      <div class="steps">
-        <div class="step">
-          <div class="step-number">1</div>
-          <div class="step-content">
-            <h3>We create content that triggers real engagement</h3>
+      <h2>How We Generate Pipeline</h2>
+      <div class="flow-diagram">
+        <div class="flow-step">
+          <div class="flow-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 20h9M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+          </div>
+          <span>Post</span>
+        </div>
+        <span class="flow-arrow">→</span>
+        <div class="flow-step">
+          <div class="flow-icon">
+            <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+          </div>
+          <span>Comment</span>
+        </div>
+        <span class="flow-arrow">→</span>
+        <div class="flow-step">
+          <div class="flow-icon">
+            <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </div>
+          <span>DM</span>
+        </div>
+        <span class="flow-arrow">→</span>
+        <div class="flow-step">
+          <div class="flow-icon">
+            <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          </div>
+          <span>Qualified</span>
+        </div>
+        <span class="flow-arrow">→</span>
+        <div class="flow-step deal">
+          <div class="flow-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+          </div>
+          <span>Deal</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Conversation Mockup -->
+  <section class="conversation-section">
+    <div class="container">
+      <h2>Real Conversations, Real Pipeline</h2>
+      <p>This is what opportunity looks like—not likes, not comments—actual buyer conversations.</p>
+      <div class="conversation-mockup">
+        <div class="conversation-header">
+          <div class="conversation-avatar">JM</div>
+          <div>
+            <div class="conversation-name">James Mitchell</div>
+            <div class="conversation-status">● Active now</div>
           </div>
         </div>
-        <div class="step">
-          <div class="step-number">2</div>
-          <div class="step-content">
-            <h3>We turn engagement into direct conversations</h3>
+        <div class="conversation-messages">
+          <div class="message incoming">
+            I've been thinking about this for a while but not sure if it's the right time...
+            <div class="message-time">2:34 PM</div>
           </div>
-        </div>
-        <div class="step">
-          <div class="step-number">3</div>
-          <div class="step-content">
-            <h3>We guide those conversations into your pipeline</h3>
+          <div class="message outgoing">
+            Totally get it—what's your timeline looking like?
+            <div class="message-time">2:35 PM</div>
+          </div>
+          <div class="message incoming">
+            Ideally next quarter. We need to fix our lead gen before then.
+            <div class="message-time">2:36 PM</div>
+          </div>
+          <div class="message outgoing">
+            Makes sense. Want to jump on a quick call this week to map it out?
+            <div class="message-time">2:36 PM</div>
+          </div>
+          <div class="message incoming">
+            Yeah, let's do it. Thursday works.
+            <div class="message-time">2:37 PM</div>
           </div>
         </div>
       </div>
-      <p class="bottom-line">That's where deals actually start.</p>
-      <a href="#book" class="btn">Book a Call</a>
     </div>
   </section>
 
@@ -485,14 +756,43 @@
   <section class="what-you-get">
     <div class="container">
       <h2>What You Get</h2>
-      <ul>
-        <li>Daily high-converting content</li>
-        <li>Comment + DM strategy</li>
-        <li>Conversation scripts</li>
-        <li>Lead qualification flow</li>
-        <li>Ongoing optimization</li>
-      </ul>
-      <p class="tagline">No fluff. Just pipeline.</p>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 20h9M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+          </div>
+          <h3>Daily High-Converting Content</h3>
+          <p>Content engineered to trigger engagement and start conversations—not just get likes.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+          </div>
+          <h3>Comment + DM Strategy</h3>
+          <p>Systematic approach to turn every comment into a qualified conversation.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+          </div>
+          <h3>Conversation Scripts</h3>
+          <p>Proven messaging frameworks that guide prospects from interest to booked call.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          </div>
+          <h3>Lead Qualification Flow</h3>
+          <p>Only spend time on prospects who are ready to buy—not tire kickers.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+          </div>
+          <h3>Ongoing Optimization</h3>
+          <p>We continuously refine what's working to maximize your conversation rate.</p>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -500,41 +800,50 @@
   <section class="who-for">
     <div class="container">
       <h2>Who This Is For</h2>
-      <p class="subtitle">Best fit for:</p>
-      <ul>
-        <li>Mortgage companies</li>
-        <li>Loan officers</li>
-        <li>Real estate professionals</li>
-        <li>Roofing companies</li>
-        <li>Home service businesses</li>
-      </ul>
-      <p class="fit-line">If your business depends on conversations, <strong>this works.</strong></p>
+      <p>Any business that relies on conversations to generate revenue.</p>
+      <div class="industries">
+        <span class="industry-tag">Mortgage Companies</span>
+        <span class="industry-tag">Loan Officers</span>
+        <span class="industry-tag">Real Estate Professionals</span>
+        <span class="industry-tag">Roofing Companies</span>
+        <span class="industry-tag">Home Service Businesses</span>
+        <span class="industry-tag">Contractors</span>
+        <span class="industry-tag">Financial Advisors</span>
+        <span class="industry-tag">Insurance Agents</span>
+      </div>
     </div>
   </section>
 
-  <!-- Pilot Offer -->
+  <!-- Pilot -->
   <section class="pilot">
     <div class="container">
-      <h2>90-Day Pilot</h2>
-      <p class="intro">We run this as a simple 90-day pilot:</p>
-      <ul>
-        <li>Generate inbound conversations</li>
-        <li>Track opportunities</li>
-        <li>Optimize based on results</li>
-      </ul>
-      <div class="terms">
-        <p>If it works, we scale.</p>
-        <p>If not, no long-term commitment.</p>
+      <h2>Start With a 90-Day Pilot</h2>
+      <div class="pilot-steps">
+        <div class="pilot-step">
+          <span class="pilot-step-number">1</span>
+          <span>Generate Conversations</span>
+        </div>
+        <span class="pilot-arrow">→</span>
+        <div class="pilot-step">
+          <span class="pilot-step-number">2</span>
+          <span>Track Opportunities</span>
+        </div>
+        <span class="pilot-arrow">→</span>
+        <div class="pilot-step">
+          <span class="pilot-step-number">3</span>
+          <span>Scale What Works</span>
+        </div>
       </div>
+      <p class="subtext">No long-term commitment. If it works, we scale. If not, no hard feelings.</p>
     </div>
   </section>
 
   <!-- Final CTA -->
   <section class="final-cta" id="book">
     <div class="container">
-      <h2>Let's Turn Your Social Into a Revenue Channel</h2>
-      <a href="#book" class="btn">Book a Call</a>
-      <p class="subtext">Quick 10–15 minute call to see if this fits your business.</p>
+      <h2>Ready to Turn Social Into Revenue?</h2>
+      <p>See exactly how we generate 5–15 real sales conversations per week.</p>
+      <a href="#book" class="btn">See How This Works</a>
     </div>
   </section>
 
