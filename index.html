@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pipeline AI - Turn Social Media Into Sales Conversations</title>
+  <title>Pipeline AI - Turn Social Media Into Real Buyer Conversations</title>
   <link rel="icon" type="image/png" sizes="32x32" href="images/favicon.png">
   <link rel="apple-touch-icon" sizes="180x180" href="images/favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -31,12 +31,12 @@
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
       background: var(--white);
       color: var(--navy);
-      line-height: 1.6;
+      line-height: 1.7;
       -webkit-font-smoothing: antialiased;
     }
 
     .container {
-      max-width: 1100px;
+      max-width: 900px;
       margin: 0 auto;
       padding: 0 24px;
     }
@@ -45,7 +45,7 @@
       display: inline-block;
       background: var(--blue);
       color: var(--white);
-      padding: 18px 36px;
+      padding: 18px 32px;
       font-size: 16px;
       font-weight: 600;
       text-decoration: none;
@@ -60,24 +60,13 @@
       transform: translateY(-2px);
     }
 
-    .btn-outline {
-      background: transparent;
-      border: 2px solid var(--white);
-      color: var(--white);
-    }
-
-    .btn-outline:hover {
-      background: var(--white);
-      color: var(--navy);
-    }
-
     section {
       padding: 80px 0;
     }
 
     @media (min-width: 768px) {
       section {
-        padding: 120px 0;
+        padding: 100px 0;
       }
     }
 
@@ -88,8 +77,8 @@
       left: 0;
       right: 0;
       z-index: 100;
-      padding: 20px 0;
-      background: rgba(11, 31, 58, 0.95);
+      padding: 12px 0;
+      background: rgba(11, 31, 58, 0.98);
       backdrop-filter: blur(10px);
     }
 
@@ -99,154 +88,144 @@
       align-items: center;
     }
 
-    .header .btn {
-      padding: 14px 28px;
-      font-size: 15px;
-    }
-
     .logo {
-      height: 140px;
+      height: 50px;
       width: auto;
     }
 
     @media (min-width: 768px) {
       .logo {
-        height: 160px;
+        height: 56px;
       }
     }
 
-    
+    .header .btn {
+      padding: 12px 20px;
+      font-size: 14px;
+    }
+
+    @media (max-width: 600px) {
+      .header .btn {
+        padding: 10px 14px;
+        font-size: 12px;
+      }
+    }
 
     /* Hero */
     .hero {
-      background: linear-gradient(135deg, var(--navy) 0%, #132d4e 50%, #0d2847 100%);
+      background: linear-gradient(145deg, var(--navy) 0%, #0f2847 100%);
       color: var(--white);
-      padding-top: 200px;
-      padding-bottom: 100px;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: radial-gradient(circle at 70% 30%, rgba(37, 99, 235, 0.15) 0%, transparent 50%),
-                  radial-gradient(circle at 30% 70%, rgba(34, 197, 94, 0.1) 0%, transparent 50%);
-      pointer-events: none;
+      padding-top: 120px;
+      padding-bottom: 80px;
     }
 
     @media (min-width: 768px) {
       .hero {
-        padding-top: 240px;
-        padding-bottom: 140px;
+        padding-top: 160px;
+        padding-bottom: 120px;
       }
     }
 
-    .hero .container {
-      position: relative;
-      z-index: 1;
-    }
-
     .hero h1 {
-      font-size: clamp(36px, 7vw, 64px);
+      font-size: clamp(32px, 6vw, 52px);
       font-weight: 800;
-      line-height: 1.1;
+      line-height: 1.15;
       letter-spacing: -0.02em;
       margin-bottom: 24px;
-      max-width: 800px;
-    }
-
-    .hero h1 span {
-      color: var(--green);
     }
 
     .hero .subheadline {
-      font-size: clamp(18px, 2.5vw, 22px);
-      color: rgba(255, 255, 255, 0.8);
+      font-size: 18px;
+      color: rgba(255, 255, 255, 0.85);
       margin-bottom: 40px;
-      max-width: 600px;
+      max-width: 560px;
+      line-height: 1.7;
     }
 
     /* Problem */
     .problem {
-      background: var(--gray-50);
+      background: var(--white);
     }
 
     .problem h2 {
-      font-size: clamp(28px, 4vw, 40px);
+      font-size: clamp(28px, 4vw, 36px);
       font-weight: 700;
-      margin-bottom: 24px;
-      line-height: 1.2;
+      margin-bottom: 32px;
     }
 
-    .problem p {
-      font-size: 18px;
-      color: var(--gray-600);
-      max-width: 600px;
-    }
-
-    .problem .stats {
+    .problem-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 32px;
-      margin-top: 48px;
+      grid-template-columns: 1fr;
+      gap: 48px;
     }
 
-    .stat {
-      text-align: center;
-      padding: 32px;
-      background: var(--white);
-      border-radius: 12px;
+    @media (min-width: 768px) {
+      .problem-grid {
+        grid-template-columns: 1fr 1fr;
+      }
     }
 
-    .stat-number {
-      font-size: 48px;
-      font-weight: 800;
-      color: var(--blue);
-      line-height: 1;
-    }
-
-    .stat-label {
-      margin-top: 8px;
+    .problem-column p {
       color: var(--gray-600);
-      font-size: 14px;
-    }
-
-    /* Shift */
-    .shift {
-      text-align: center;
-    }
-
-    .shift h2 {
-      font-size: clamp(28px, 4vw, 44px);
-      font-weight: 700;
       margin-bottom: 16px;
+      font-size: 17px;
     }
 
-    .shift .highlight {
-      color: var(--blue);
+    .problem-column ul {
+      list-style: none;
     }
 
-    .shift p {
-      font-size: 18px;
-      color: var(--gray-600);
-      max-width: 500px;
+    .problem-column li {
+      padding: 10px 0;
+      padding-left: 28px;
+      position: relative;
+      font-size: 17px;
+    }
+
+    .problem-column li::before {
+      content: "→";
+      position: absolute;
+      left: 0;
+      color: var(--gray-400);
+    }
+
+    .problem-column.negative li::before {
+      content: "✕";
+      color: #ef4444;
+    }
+
+    .problem-column.negative li {
+      color: var(--navy);
+      font-weight: 500;
+    }
+
+    /* Positioning */
+    .positioning {
+      background: var(--navy);
+      color: var(--white);
+      text-align: center;
+    }
+
+    .positioning p {
+      font-size: clamp(24px, 4vw, 36px);
+      font-weight: 700;
+      line-height: 1.4;
+      max-width: 700px;
       margin: 0 auto;
     }
 
-    /* Flow Diagram */
+    .positioning p span {
+      color: var(--green);
+    }
+
+    /* Flow */
     .flow {
-      background: var(--navy);
-      color: var(--white);
+      background: var(--gray-50);
       overflow-x: auto;
     }
 
     .flow h2 {
-      font-size: clamp(24px, 4vw, 36px);
+      font-size: clamp(24px, 4vw, 32px);
       font-weight: 700;
       margin-bottom: 48px;
       text-align: center;
@@ -256,16 +235,10 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 12px;
-      flex-wrap: wrap;
+      gap: 8px;
+      flex-wrap: nowrap;
       padding: 20px 0;
-    }
-
-    @media (min-width: 768px) {
-      .flow-diagram {
-        flex-wrap: nowrap;
-        gap: 16px;
-      }
+      min-width: max-content;
     }
 
     .flow-step {
@@ -273,18 +246,17 @@
       flex-direction: column;
       align-items: center;
       gap: 12px;
-      padding: 24px 20px;
-      background: rgba(255, 255, 255, 0.05);
+      padding: 20px 16px;
+      background: var(--white);
       border-radius: 12px;
-      min-width: 100px;
-      flex: 1;
-      max-width: 140px;
+      min-width: 90px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
     }
 
     .flow-icon {
-      width: 48px;
-      height: 48px;
-      background: var(--blue);
+      width: 44px;
+      height: 44px;
+      background: var(--navy);
       border-radius: 50%;
       display: flex;
       align-items: center;
@@ -292,8 +264,8 @@
     }
 
     .flow-icon svg {
-      width: 24px;
-      height: 24px;
+      width: 22px;
+      height: 22px;
       stroke: white;
       fill: none;
       stroke-width: 2;
@@ -301,180 +273,148 @@
 
     .flow-step span {
       font-weight: 600;
-      font-size: 14px;
-      text-align: center;
+      font-size: 13px;
+      color: var(--navy);
     }
 
     .flow-arrow {
-      color: var(--green);
-      font-size: 24px;
+      color: var(--blue);
+      font-size: 20px;
       font-weight: bold;
     }
 
-    @media (max-width: 767px) {
-      .flow-arrow {
-        display: none;
-      }
-    }
-
     .flow-step.deal {
-      background: rgba(34, 197, 94, 0.2);
-      border: 2px solid var(--green);
-    }
-
-    .flow-step.deal .flow-icon {
       background: var(--green);
     }
 
-    /* Conversation Mockup */
-    .conversation-section {
-      background: var(--gray-50);
-    }
-
-    .conversation-section h2 {
-      font-size: clamp(24px, 4vw, 36px);
-      font-weight: 700;
-      margin-bottom: 16px;
-      text-align: center;
-    }
-
-    .conversation-section > .container > p {
-      text-align: center;
-      color: var(--gray-600);
-      margin-bottom: 48px;
-    }
-
-    .conversation-mockup {
-      max-width: 400px;
-      margin: 0 auto;
+    .flow-step.deal .flow-icon {
       background: var(--white);
-      border-radius: 24px;
-      overflow: hidden;
-      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
     }
 
-    .conversation-header {
+    .flow-step.deal .flow-icon svg {
+      stroke: var(--green);
+    }
+
+    .flow-step.deal span {
+      color: var(--white);
+    }
+
+    /* How It Works */
+    .how-it-works {
+      background: var(--white);
+    }
+
+    .how-it-works h2 {
+      font-size: clamp(28px, 4vw, 36px);
+      font-weight: 700;
+      margin-bottom: 48px;
+      text-align: center;
+    }
+
+    .steps {
+      display: grid;
+      gap: 32px;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .step {
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+    }
+
+    .step-number {
+      flex-shrink: 0;
+      width: 48px;
+      height: 48px;
       background: var(--navy);
       color: var(--white);
-      padding: 16px 20px;
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-
-    .conversation-avatar {
-      width: 40px;
-      height: 40px;
-      background: var(--blue);
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
       font-weight: 700;
-      font-size: 14px;
+      font-size: 18px;
     }
 
-    .conversation-name {
+    .step-content h3 {
+      font-size: 18px;
       font-weight: 600;
-    }
-
-    .conversation-status {
-      font-size: 12px;
-      color: var(--green);
-    }
-
-    .conversation-messages {
-      padding: 24px 20px;
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-    }
-
-    .message {
-      max-width: 85%;
-      padding: 14px 18px;
-      border-radius: 18px;
-      font-size: 15px;
+      margin-bottom: 4px;
       line-height: 1.4;
     }
 
-    .message.incoming {
-      background: var(--gray-100);
-      align-self: flex-start;
-      border-bottom-left-radius: 4px;
-    }
-
-    .message.outgoing {
-      background: var(--blue);
-      color: var(--white);
-      align-self: flex-end;
-      border-bottom-right-radius: 4px;
-    }
-
-    .message-time {
-      font-size: 11px;
-      color: var(--gray-400);
-      margin-top: 4px;
-    }
-
-    .message.outgoing .message-time {
-      color: rgba(255, 255, 255, 0.7);
+    .step-content p {
+      color: var(--gray-600);
+      font-size: 15px;
     }
 
     /* What You Get */
+    .what-you-get {
+      background: var(--gray-50);
+    }
+
     .what-you-get h2 {
-      font-size: clamp(28px, 4vw, 40px);
+      font-size: clamp(28px, 4vw, 36px);
       font-weight: 700;
-      margin-bottom: 48px;
+      margin-bottom: 40px;
       text-align: center;
     }
 
-    .features-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 24px;
+    .benefits-list {
+      list-style: none;
+      max-width: 500px;
+      margin: 0 auto;
     }
 
-    .feature-card {
-      padding: 32px;
-      background: var(--gray-50);
-      border-radius: 16px;
-      transition: all 0.2s ease;
-    }
-
-    .feature-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
-    }
-
-    .feature-icon {
-      width: 48px;
-      height: 48px;
-      background: var(--navy);
-      border-radius: 12px;
+    .benefits-list li {
+      padding: 16px 0;
+      border-bottom: 1px solid var(--gray-100);
+      font-size: 17px;
       display: flex;
       align-items: center;
-      justify-content: center;
-      margin-bottom: 16px;
+      gap: 16px;
     }
 
-    .feature-icon svg {
-      width: 24px;
-      height: 24px;
-      stroke: var(--white);
-      fill: none;
-      stroke-width: 2;
-    }
-
-    .feature-card h3 {
+    .benefits-list li::before {
+      content: "✓";
+      color: var(--green);
+      font-weight: 700;
       font-size: 18px;
-      font-weight: 600;
+    }
+
+    /* Proof */
+    .proof {
+      background: var(--white);
+      text-align: center;
+    }
+
+    .proof-card {
+      background: linear-gradient(145deg, var(--navy) 0%, #0f2847 100%);
+      color: var(--white);
+      padding: 48px 40px;
+      border-radius: 16px;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    .proof-stat {
+      font-size: clamp(36px, 6vw, 48px);
+      font-weight: 800;
+      color: var(--green);
       margin-bottom: 8px;
     }
 
-    .feature-card p {
-      color: var(--gray-600);
-      font-size: 15px;
+    .proof-label {
+      font-size: 18px;
+      color: rgba(255,255,255,0.9);
+    }
+
+    .proof-time {
+      margin-top: 16px;
+      font-size: 14px;
+      color: rgba(255,255,255,0.6);
     }
 
     /* Who This Is For */
@@ -483,7 +423,7 @@
     }
 
     .who-for h2 {
-      font-size: clamp(28px, 4vw, 40px);
+      font-size: clamp(28px, 4vw, 36px);
       font-weight: 700;
       margin-bottom: 16px;
       text-align: center;
@@ -492,7 +432,7 @@
     .who-for > .container > p {
       text-align: center;
       color: var(--gray-600);
-      margin-bottom: 48px;
+      margin-bottom: 40px;
       font-size: 18px;
     }
 
@@ -500,75 +440,60 @@
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 16px;
+      gap: 12px;
     }
 
     .industry-tag {
-      padding: 14px 24px;
+      padding: 12px 24px;
       background: var(--white);
       border-radius: 100px;
       font-weight: 500;
       font-size: 15px;
-      border: 1px solid var(--gray-100);
     }
 
     /* Pilot */
     .pilot {
-      text-align: center;
+      background: var(--white);
     }
 
     .pilot h2 {
-      font-size: clamp(28px, 4vw, 40px);
+      font-size: clamp(28px, 4vw, 36px);
       font-weight: 700;
-      margin-bottom: 24px;
+      margin-bottom: 32px;
+      text-align: center;
     }
 
-    .pilot-steps {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 16px;
-      flex-wrap: wrap;
-      margin-top: 48px;
+    .pilot-content {
+      max-width: 500px;
+      margin: 0 auto;
+      text-align: center;
     }
 
-    .pilot-step {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      padding: 16px 24px;
-      background: var(--gray-50);
-      border-radius: 100px;
-      font-weight: 500;
+    .pilot-list {
+      list-style: none;
+      margin-bottom: 32px;
+      text-align: left;
     }
 
-    .pilot-step-number {
-      width: 28px;
-      height: 28px;
-      background: var(--navy);
-      color: var(--white);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 14px;
-      font-weight: 700;
+    .pilot-list li {
+      padding: 12px 0;
+      padding-left: 28px;
+      position: relative;
+      font-size: 17px;
     }
 
-    .pilot-arrow {
+    .pilot-list li::before {
+      content: "•";
+      position: absolute;
+      left: 8px;
       color: var(--blue);
-      font-size: 20px;
+      font-weight: 700;
     }
 
-    @media (max-width: 767px) {
-      .pilot-arrow {
-        display: none;
-      }
-    }
-
-    .pilot .subtext {
-      margin-top: 32px;
+    .pilot-terms {
       color: var(--gray-600);
+      font-size: 16px;
+      line-height: 1.7;
     }
 
     /* Final CTA */
@@ -576,43 +501,19 @@
       background: var(--navy);
       color: var(--white);
       text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .final-cta::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: radial-gradient(circle at 50% 50%, rgba(37, 99, 235, 0.2) 0%, transparent 60%);
-      pointer-events: none;
-    }
-
-    .final-cta .container {
-      position: relative;
-      z-index: 1;
     }
 
     .final-cta h2 {
-      font-size: clamp(32px, 5vw, 52px);
+      font-size: clamp(28px, 5vw, 44px);
       font-weight: 800;
-      margin-bottom: 24px;
-      line-height: 1.1;
-    }
-
-    .final-cta p {
-      color: rgba(255, 255, 255, 0.7);
-      margin-bottom: 40px;
-      font-size: 18px;
+      margin-bottom: 32px;
+      line-height: 1.2;
     }
 
     .final-cta .btn {
       background: var(--green);
-      font-size: 18px;
-      padding: 20px 48px;
+      font-size: 17px;
+      padding: 20px 36px;
     }
 
     .final-cta .btn:hover {
@@ -643,46 +544,48 @@
   <!-- Hero -->
   <section class="hero">
     <div class="container">
-      <h1>Turn Social Media Into <span>5–15 Real Sales Conversations</span> Per Week</h1>
-      <p class="subheadline">We convert your posts into real buyer conversations—no ads, no funnels.</p>
-      <a href="#book" class="btn">See How This Works</a>
+      <h1>Turn Your Social Media Into Real Buyer Conversations (Without Ads)</h1>
+      <p class="subheadline">Most businesses post daily and generate nothing. We turn your content into real conversations with people already thinking about buying.</p>
+      <a href="#book" class="btn">See How This Would Work For Your Business</a>
     </div>
   </section>
 
   <!-- Problem -->
   <section class="problem">
     <div class="container">
-      <h2>The Problem</h2>
-      <p>Most businesses post daily and generate zero real opportunities. Likes don't pay the bills. Comments don't close deals.</p>
-      <div class="stats">
-        <div class="stat">
-          <div class="stat-number">95%</div>
-          <div class="stat-label">of social posts generate zero pipeline</div>
+      <h2>Here's the Problem</h2>
+      <div class="problem-grid">
+        <div class="problem-column">
+          <p>Most businesses:</p>
+          <ul>
+            <li>post consistently</li>
+            <li>get likes</li>
+            <li>maybe a few comments</li>
+          </ul>
         </div>
-        <div class="stat">
-          <div class="stat-number">0</div>
-          <div class="stat-label">conversations from "engagement"</div>
-        </div>
-        <div class="stat">
-          <div class="stat-number">$0</div>
-          <div class="stat-label">revenue from vanity metrics</div>
+        <div class="problem-column negative">
+          <p>But...</p>
+          <ul>
+            <li>no real opportunities</li>
+            <li>no real conversations</li>
+            <li>no pipeline</li>
+          </ul>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Shift -->
-  <section class="shift">
+  <!-- Positioning -->
+  <section class="positioning">
     <div class="container">
-      <h2>We don't create content.<br><span class="highlight">We create conversations.</span></h2>
-      <p>Content is noise. Conversations are revenue. We turn every post into an opportunity to start a real sales conversation.</p>
+      <p>We don't generate leads.<br><span>We generate conversations that turn into revenue.</span></p>
     </div>
   </section>
 
-  <!-- Flow Diagram -->
+  <!-- Flow -->
   <section class="flow">
     <div class="container">
-      <h2>How We Generate Pipeline</h2>
+      <h2>How We Build Your Pipeline</h2>
       <div class="flow-diagram">
         <div class="flow-step">
           <div class="flow-icon">
@@ -722,39 +625,27 @@
     </div>
   </section>
 
-  <!-- Conversation Mockup -->
-  <section class="conversation-section">
+  <!-- How It Works -->
+  <section class="how-it-works">
     <div class="container">
-      <h2>Real Conversations, Real Pipeline</h2>
-      <p>This is what opportunity looks like—not likes, not comments—actual buyer conversations.</p>
-      <div class="conversation-mockup">
-        <div class="conversation-header">
-          <div class="conversation-avatar">JM</div>
-          <div>
-            <div class="conversation-name">James Mitchell</div>
-            <div class="conversation-status">● Active now</div>
+      <h2>How It Works</h2>
+      <div class="steps">
+        <div class="step">
+          <div class="step-number">1</div>
+          <div class="step-content">
+            <h3>We create content designed to trigger real engagement</h3>
           </div>
         </div>
-        <div class="conversation-messages">
-          <div class="message incoming">
-            I've been thinking about this for a while but not sure if it's the right time...
-            <div class="message-time">2:34 PM</div>
+        <div class="step">
+          <div class="step-number">2</div>
+          <div class="step-content">
+            <h3>We turn engagement into direct conversations</h3>
           </div>
-          <div class="message outgoing">
-            Totally get it—what's your timeline looking like?
-            <div class="message-time">2:35 PM</div>
-          </div>
-          <div class="message incoming">
-            Ideally next quarter. We need to fix our lead gen before then.
-            <div class="message-time">2:36 PM</div>
-          </div>
-          <div class="message outgoing">
-            Makes sense. Want to jump on a quick call this week to map it out?
-            <div class="message-time">2:36 PM</div>
-          </div>
-          <div class="message incoming">
-            Yeah, let's do it. Thursday works.
-            <div class="message-time">2:37 PM</div>
+        </div>
+        <div class="step">
+          <div class="step-number">3</div>
+          <div class="step-content">
+            <h3>We guide those conversations into your pipeline</h3>
           </div>
         </div>
       </div>
@@ -765,42 +656,23 @@
   <section class="what-you-get">
     <div class="container">
       <h2>What You Get</h2>
-      <div class="features-grid">
-        <div class="feature-card">
-          <div class="feature-icon">
-            <svg viewBox="0 0 24 24"><path d="M12 20h9M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
-          </div>
-          <h3>Daily High-Converting Content</h3>
-          <p>Content engineered to trigger engagement and start conversations—not just get likes.</p>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon">
-            <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
-          </div>
-          <h3>Comment + DM Strategy</h3>
-          <p>Systematic approach to turn every comment into a qualified conversation.</p>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon">
-            <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
-          </div>
-          <h3>Conversation Scripts</h3>
-          <p>Proven messaging frameworks that guide prospects from interest to booked call.</p>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon">
-            <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-          </div>
-          <h3>Lead Qualification Flow</h3>
-          <p>Only spend time on prospects who are ready to buy—not tire kickers.</p>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon">
-            <svg viewBox="0 0 24 24"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
-          </div>
-          <h3>Ongoing Optimization</h3>
-          <p>We continuously refine what's working to maximize your conversation rate.</p>
-        </div>
+      <ul class="benefits-list">
+        <li>Daily high-converting content</li>
+        <li>Comment + DM strategy</li>
+        <li>Conversation scripts</li>
+        <li>Lead qualification flow</li>
+        <li>Ongoing optimization</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Proof -->
+  <section class="proof">
+    <div class="container">
+      <div class="proof-card">
+        <div class="proof-stat">12 → 3</div>
+        <div class="proof-label">12 conversations turned into 3 real opportunities</div>
+        <div class="proof-time">in just 10 days</div>
       </div>
     </div>
   </section>
@@ -811,14 +683,10 @@
       <h2>Who This Is For</h2>
       <p>Any business that relies on conversations to generate revenue.</p>
       <div class="industries">
-        <span class="industry-tag">Mortgage Companies</span>
-        <span class="industry-tag">Loan Officers</span>
+        <span class="industry-tag">Local Service Businesses</span>
         <span class="industry-tag">Real Estate Professionals</span>
-        <span class="industry-tag">Roofing Companies</span>
-        <span class="industry-tag">Home Service Businesses</span>
+        <span class="industry-tag">Mortgage Companies</span>
         <span class="industry-tag">Contractors</span>
-        <span class="industry-tag">Financial Advisors</span>
-        <span class="industry-tag">Insurance Agents</span>
       </div>
     </div>
   </section>
@@ -826,24 +694,15 @@
   <!-- Pilot -->
   <section class="pilot">
     <div class="container">
-      <h2>Start With a 90-Day Pilot</h2>
-      <div class="pilot-steps">
-        <div class="pilot-step">
-          <span class="pilot-step-number">1</span>
-          <span>Generate Conversations</span>
-        </div>
-        <span class="pilot-arrow">→</span>
-        <div class="pilot-step">
-          <span class="pilot-step-number">2</span>
-          <span>Track Opportunities</span>
-        </div>
-        <span class="pilot-arrow">→</span>
-        <div class="pilot-step">
-          <span class="pilot-step-number">3</span>
-          <span>Scale What Works</span>
-        </div>
+      <h2>Simple 90-Day Pilot</h2>
+      <div class="pilot-content">
+        <ul class="pilot-list">
+          <li>Generate conversations</li>
+          <li>Track opportunities</li>
+          <li>Optimize results</li>
+        </ul>
+        <p class="pilot-terms">If it works, scale.<br>If not, no long-term commitment.</p>
       </div>
-      <p class="subtext">No long-term commitment. If it works, we scale. If not, no hard feelings.</p>
     </div>
   </section>
 
@@ -851,8 +710,7 @@
   <section class="final-cta" id="book">
     <div class="container">
       <h2>Ready to Turn Social Into Revenue?</h2>
-      <p>See exactly how we generate 5–15 real sales conversations per week.</p>
-      <a href="#book" class="btn">See How This Works</a>
+      <a href="#book" class="btn">See How This Would Work For Your Business</a>
     </div>
   </section>
 
