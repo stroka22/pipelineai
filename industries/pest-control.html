@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Social Media for Pest Control Companies | Pipeline AI</title>
+  <meta name="description" content="Turn your pest control company's social media into real service calls. We generate conversations with homeowners who need pest control - not just likes and followers.">
+  <link rel="icon" type="image/png" href="../images/favicon.png">
+  <link rel="apple-touch-icon" href="../images/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --navy: #0B1F3A;
+      --blue: #2563EB;
+      --green: #22C55E;
+      --white: #ffffff;
+      --gray-50: #f9fafb;
+      --gray-100: #f3f4f6;
+      --gray-400: #9ca3af;
+      --gray-600: #4b5563;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--white);
+      color: var(--navy);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .btn {
+      display: inline-block;
+      background: var(--blue);
+      color: var(--white);
+      padding: 18px 28px;
+      font-size: 16px;
+      font-weight: 600;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: all 0.2s ease;
+    }
+
+    .btn:hover {
+      background: #1d4ed8;
+      transform: translateY(-1px);
+    }
+
+    section {
+      padding: 80px 0;
+    }
+
+    @media (min-width: 768px) {
+      section {
+        padding: 100px 0;
+      }
+    }
+
+    h2 {
+      font-size: clamp(26px, 4vw, 34px);
+      font-weight: 700;
+      margin-bottom: 24px;
+    }
+
+    /* Header */
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      padding: 16px 0;
+      background: rgba(11, 31, 58, 0.98);
+      backdrop-filter: blur(10px);
+    }
+
+    .header .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo-text {
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--white);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 2px;
+    }
+
+    .logo-text span {
+      color: var(--blue);
+    }
+
+    .header .btn {
+      padding: 12px 20px;
+      font-size: 14px;
+    }
+
+    @media (max-width: 500px) {
+      .header .btn {
+        padding: 10px 12px;
+        font-size: 12px;
+      }
+      .logo-text {
+        font-size: 18px;
+      }
+    }
+
+    /* Hero */
+    .hero {
+      background: var(--navy);
+      color: var(--white);
+      padding-top: 100px;
+      padding-bottom: 80px;
+    }
+
+    @media (min-width: 768px) {
+      .hero {
+        padding-top: 140px;
+        padding-bottom: 100px;
+      }
+    }
+
+    .hero .badge {
+      display: inline-block;
+      background: rgba(34, 197, 94, 0.15);
+      color: var(--green);
+      padding: 8px 16px;
+      border-radius: 100px;
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 24px;
+    }
+
+    .hero h1 {
+      font-size: clamp(30px, 5.5vw, 48px);
+      font-weight: 800;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      margin-bottom: 24px;
+    }
+
+    .hero .subheadline {
+      font-size: 18px;
+      color: rgba(255, 255, 255, 0.8);
+      margin-bottom: 24px;
+      max-width: 540px;
+      line-height: 1.7;
+    }
+
+    .hero .trust-line {
+      font-size: 14px;
+      color: rgba(255, 255, 255, 0.5);
+      margin-bottom: 32px;
+    }
+
+    /* Problem */
+    .problem {
+      background: var(--white);
+    }
+
+    .problem-content {
+      max-width: 600px;
+    }
+
+    .problem p.intro {
+      color: var(--gray-600);
+      font-size: 17px;
+      margin-bottom: 20px;
+    }
+
+    .problem ul {
+      list-style: none;
+      margin-bottom: 32px;
+    }
+
+    .problem li {
+      padding: 8px 0;
+      padding-left: 24px;
+      position: relative;
+      font-size: 17px;
+      color: var(--gray-600);
+    }
+
+    .problem li::before {
+      content: "→";
+      position: absolute;
+      left: 0;
+      color: var(--gray-400);
+    }
+
+    .problem .but-section {
+      padding-top: 24px;
+      border-top: 1px solid var(--gray-100);
+    }
+
+    .problem .but-section p {
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 16px;
+    }
+
+    .problem .but-section li::before {
+      content: "✕";
+      color: #dc2626;
+    }
+
+    .problem .but-section li {
+      color: var(--navy);
+      font-weight: 500;
+    }
+
+    .problem .closing {
+      margin-top: 32px;
+      font-size: 17px;
+      color: var(--gray-600);
+    }
+
+    .problem .closing strong {
+      color: var(--navy);
+    }
+
+    /* Positioning */
+    .positioning {
+      background: var(--navy);
+      color: var(--white);
+    }
+
+    .positioning h2 {
+      color: var(--white);
+      margin-bottom: 32px;
+    }
+
+    .positioning p {
+      font-size: 18px;
+      color: rgba(255, 255, 255, 0.8);
+      margin-bottom: 16px;
+      line-height: 1.8;
+    }
+
+    .positioning .highlight {
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--green);
+      margin: 32px 0;
+    }
+
+    .positioning .insight {
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 17px;
+      margin-top: 24px;
+    }
+
+    /* Flow */
+    .flow {
+      background: var(--gray-50);
+      text-align: center;
+    }
+
+    .flow-diagram {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 32px 0;
+      overflow-x: auto;
+    }
+
+    .flow-step {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      padding: 16px 14px;
+      background: var(--white);
+      border-radius: 10px;
+      min-width: 80px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+
+    .flow-icon {
+      width: 40px;
+      height: 40px;
+      background: var(--navy);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .flow-icon svg {
+      width: 20px;
+      height: 20px;
+      stroke: white;
+      fill: none;
+      stroke-width: 2;
+    }
+
+    .flow-step span {
+      font-weight: 600;
+      font-size: 12px;
+      color: var(--navy);
+    }
+
+    .flow-arrow {
+      color: var(--blue);
+      font-size: 18px;
+      font-weight: bold;
+      flex-shrink: 0;
+    }
+
+    .flow-step.deal {
+      background: var(--green);
+    }
+
+    .flow-step.deal .flow-icon {
+      background: rgba(255,255,255,0.9);
+    }
+
+    .flow-step.deal .flow-icon svg {
+      stroke: var(--green);
+    }
+
+    .flow-step.deal span {
+      color: var(--white);
+    }
+
+    .flow .tagline {
+      margin-top: 24px;
+      color: var(--gray-600);
+      font-size: 16px;
+    }
+
+    /* How It Works */
+    .how-it-works {
+      background: var(--white);
+    }
+
+    .how-it-works h2 {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+
+    .steps {
+      display: grid;
+      gap: 28px;
+      max-width: 560px;
+      margin: 0 auto;
+    }
+
+    .step {
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+    }
+
+    .step-number {
+      flex-shrink: 0;
+      width: 44px;
+      height: 44px;
+      background: var(--navy);
+      color: var(--white);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 16px;
+    }
+
+    .step-content p {
+      font-size: 17px;
+      line-height: 1.5;
+      padding-top: 10px;
+    }
+
+    /* What You Get */
+    .what-you-get {
+      background: var(--gray-50);
+    }
+
+    .what-you-get h2 {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .benefits-list {
+      list-style: none;
+      max-width: 440px;
+      margin: 0 auto;
+    }
+
+    .benefits-list li {
+      padding: 14px 0;
+      border-bottom: 1px solid var(--gray-100);
+      font-size: 17px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .benefits-list li::before {
+      content: "✓";
+      color: var(--green);
+      font-weight: 700;
+    }
+
+    .what-you-get .tagline {
+      text-align: center;
+      margin-top: 32px;
+      font-weight: 600;
+      color: var(--navy);
+    }
+
+    /* Services */
+    .services {
+      background: var(--white);
+    }
+
+    .services h2 {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .service-tag {
+      padding: 16px 20px;
+      background: var(--gray-50);
+      border-radius: 8px;
+      font-weight: 500;
+      text-align: center;
+    }
+
+    /* Proof */
+    .proof {
+      background: var(--gray-50);
+      text-align: center;
+    }
+
+    .proof-card {
+      background: var(--navy);
+      color: var(--white);
+      padding: 40px 32px;
+      border-radius: 12px;
+      max-width: 480px;
+      margin: 0 auto;
+    }
+
+    .proof-stat {
+      font-size: clamp(32px, 6vw, 44px);
+      font-weight: 800;
+      color: var(--green);
+      margin-bottom: 8px;
+    }
+
+    .proof-label {
+      font-size: 17px;
+      color: rgba(255,255,255,0.9);
+    }
+
+    .proof-time {
+      margin-top: 12px;
+      font-size: 14px;
+      color: rgba(255,255,255,0.5);
+    }
+
+    .proof-note {
+      margin-top: 24px;
+      font-size: 14px;
+      color: var(--gray-600);
+      max-width: 400px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* Pilot */
+    .pilot {
+      background: var(--white);
+    }
+
+    .pilot h2 {
+      text-align: center;
+      margin-bottom: 32px;
+    }
+
+    .pilot-content {
+      max-width: 480px;
+      margin: 0 auto;
+    }
+
+    .pilot p.intro {
+      color: var(--gray-600);
+      margin-bottom: 24px;
+      text-align: center;
+    }
+
+    .pilot-list {
+      list-style: none;
+      margin-bottom: 32px;
+    }
+
+    .pilot-list li {
+      padding: 10px 0;
+      padding-left: 24px;
+      position: relative;
+      font-size: 17px;
+    }
+
+    .pilot-list li::before {
+      content: "•";
+      position: absolute;
+      left: 6px;
+      color: var(--blue);
+      font-weight: 700;
+    }
+
+    .pilot-terms {
+      text-align: center;
+      color: var(--gray-600);
+      font-size: 16px;
+    }
+
+    /* Final CTA */
+    .final-cta {
+      background: var(--navy);
+      color: var(--white);
+      text-align: center;
+    }
+
+    .final-cta h2 {
+      color: var(--white);
+      font-size: clamp(28px, 5vw, 40px);
+      margin-bottom: 32px;
+    }
+
+    .final-cta .btn {
+      background: var(--green);
+      font-size: 17px;
+      padding: 20px 32px;
+    }
+
+    .final-cta .btn:hover {
+      background: #16a34a;
+    }
+
+    .final-cta .subtext {
+      margin-top: 20px;
+      font-size: 14px;
+      color: rgba(255, 255, 255, 0.5);
+    }
+
+    /* Footer */
+    footer {
+      background: var(--navy);
+      padding: 24px 0;
+      text-align: center;
+      font-size: 13px;
+      color: rgba(255, 255, 255, 0.4);
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    footer a {
+      color: rgba(255, 255, 255, 0.4);
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      color: rgba(255, 255, 255, 0.6);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container">
+      <a href="/" class="logo-text">Pipeline <span>AI</span></a>
+      <a href="https://calendly.com/brian-stroka22/30min" class="btn">Book a 15-Min Strategy Call</a>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <div class="badge">For Pest Control Companies</div>
+      <h1>Turn Your Social Media Into Booked Service Calls</h1>
+      <p class="subheadline">Most pest control companies post tips about termites and ants... but never get a single call from it. We turn your content into real conversations with homeowners who actually need pest control.</p>
+      <p class="trust-line">Works for residential, commercial, and specialty pest control services.</p>
+      <a href="https://calendly.com/brian-stroka22/30min" class="btn">Let's Build Your Pipeline</a>
+    </div>
+  </section>
+
+  <!-- Problem -->
+  <section class="problem">
+    <div class="container">
+      <h2>Here's What's Actually Happening</h2>
+      <div class="problem-content">
+        <p class="intro">Most pest control companies:</p>
+        <ul>
+          <li>Post pictures of bugs they've found</li>
+          <li>Share seasonal pest tips</li>
+          <li>Get a few likes from other exterminators</li>
+        </ul>
+        <div class="but-section">
+          <p>But...</p>
+          <ul>
+            <li>No homeowners reaching out</li>
+            <li>No service calls booked</li>
+            <li>No actual revenue from social media</li>
+          </ul>
+        </div>
+        <p class="closing">Your social media isn't broken.<br><strong>It's just not turning viewers into customers.</strong></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Positioning -->
+  <section class="positioning">
+    <div class="container">
+      <h2>We Don't Just Post Content</h2>
+      <p>We don't give you a content calendar.<br>We don't hand you hashtag lists.</p>
+      <p class="highlight">We build conversations with homeowners who need pest control right now.</p>
+      <p class="insight">Because when someone sees a roach in their kitchen or termites in their walls... they don't fill out a form. They talk to someone who can help.</p>
+    </div>
+  </section>
+
+  <!-- Flow -->
+  <section class="flow">
+    <div class="container">
+      <div class="flow-diagram">
+        <div class="flow-step">
+          <div class="flow-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 20h9M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+          </div>
+          <span>Post</span>
+        </div>
+        <span class="flow-arrow">→</span>
+        <div class="flow-step">
+          <div class="flow-icon">
+            <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+          </div>
+          <span>Comment</span>
+        </div>
+        <span class="flow-arrow">→</span>
+        <div class="flow-step">
+          <div class="flow-icon">
+            <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </div>
+          <span>DM</span>
+        </div>
+        <span class="flow-arrow">→</span>
+        <div class="flow-step">
+          <div class="flow-icon">
+            <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          </div>
+          <span>Qualified</span>
+        </div>
+        <span class="flow-arrow">→</span>
+        <div class="flow-step deal">
+          <div class="flow-icon">
+            <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+          </div>
+          <span>Service Call</span>
+        </div>
+      </div>
+      <p class="tagline">This is how social media actually generates revenue for pest control.</p>
+    </div>
+  </section>
+
+  <!-- How It Works -->
+  <section class="how-it-works">
+    <div class="container">
+      <h2>How It Works</h2>
+      <div class="steps">
+        <div class="step">
+          <div class="step-number">1</div>
+          <div class="step-content">
+            <p>We create content that gets homeowners to engage (not just other pest control companies)</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-number">2</div>
+          <div class="step-content">
+            <p>We turn that engagement into direct conversations about their pest problems</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-number">3</div>
+          <div class="step-content">
+            <p>We guide those conversations into booked inspections and service calls</p>
+          </div>
+        </div>
+      </div>
+      <div style="text-align: center; margin-top: 48px;">
+        <a href="https://calendly.com/brian-stroka22/30min" class="btn">Let's Build Your Pipeline</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- What You Get -->
+  <section class="what-you-get">
+    <div class="container">
+      <h2>What You Get</h2>
+      <ul class="benefits-list">
+        <li>Daily content that attracts homeowners, not competitors</li>
+        <li>Comment and DM strategy for your service area</li>
+        <li>Conversation scripts that book inspections</li>
+        <li>Lead qualification so you don't waste time on tire-kickers</li>
+        <li>Ongoing optimization based on what's working</li>
+      </ul>
+      <p class="tagline">No fluff. Just booked service calls.</p>
+    </div>
+  </section>
+
+  <!-- Services We Help With -->
+  <section class="services">
+    <div class="container">
+      <h2>Services We Help Promote</h2>
+      <div class="services-grid">
+        <div class="service-tag">General Pest Control</div>
+        <div class="service-tag">Termite Treatments</div>
+        <div class="service-tag">Rodent Control</div>
+        <div class="service-tag">Bed Bug Removal</div>
+        <div class="service-tag">Mosquito Control</div>
+        <div class="service-tag">Wildlife Removal</div>
+        <div class="service-tag">Commercial Pest Control</div>
+        <div class="service-tag">Preventative Plans</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Proof -->
+  <section class="proof">
+    <div class="container">
+      <div class="proof-card">
+        <div class="proof-stat">Social → Service Calls</div>
+        <div class="proof-label">Turn followers into customers who actually book</div>
+        <div class="proof-time">in your service area</div>
+      </div>
+      <p class="proof-note">The goal is simple: more homeowners calling you, not just more content posted.</p>
+    </div>
+  </section>
+
+  <!-- Pilot -->
+  <section class="pilot">
+    <div class="container">
+      <h2>Start With a Simple Test</h2>
+      <div class="pilot-content">
+        <p class="intro">We run this as a 90-day pilot:</p>
+        <ul class="pilot-list">
+          <li>Generate conversations with local homeowners</li>
+          <li>Track booked inspections and service calls</li>
+          <li>Optimize for your highest-value services</li>
+        </ul>
+        <p class="pilot-terms">If it works, we scale.<br>If not, no long-term commitment.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="final-cta">
+    <div class="container">
+      <h2>Let's Turn Your Social Media Into Booked Jobs</h2>
+      <a href="https://calendly.com/brian-stroka22/30min" class="btn">Let's Build Your Pipeline</a>
+      <p class="subtext">Quick 15-minute strategy call to see if this fits your pest control business.</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2024 Pipeline AI. All rights reserved. | <a href="/">Home</a></p>
+    </div>
+  </footer>
+
+</body>
+</html>
